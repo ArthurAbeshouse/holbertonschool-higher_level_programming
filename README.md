@@ -1,1 +1,1 @@
-# holbertonschool-higher_level_programming
+This is my directory for my Holberton projects in Python, MySQL, and JavaScript.
