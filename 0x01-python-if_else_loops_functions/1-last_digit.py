@@ -2,7 +2,7 @@
 import random
 number = random.randint(-10000, 10000)
 if number < 0:
-    l_num = number % -10
+    l_num = (number * -1) % -10
 else:
     l_num = number % 10
 if l_num > 5:
