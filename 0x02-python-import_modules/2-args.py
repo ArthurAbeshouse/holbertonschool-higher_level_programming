@@ -5,7 +5,7 @@ if __name__ == "__main__":
     if length == 1:
         print("{} arguments.".format(length - 1))
     elif length == 2:
-        print("{} arguments:".format(length - 1))
+        print("{} argument:".format(length - 1))
         print("{}: {}".format(length - 1, argv[1]))
     else:
         for i in range(length):
