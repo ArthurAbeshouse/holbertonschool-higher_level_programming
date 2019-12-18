@@ -40,7 +40,7 @@ int is_palindrome(listint_t **head)
 		return (0);
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	else if
+	else
 	{
 		fast = *head;
 		slow = *head;
