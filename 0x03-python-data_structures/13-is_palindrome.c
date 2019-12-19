@@ -9,20 +9,20 @@
  */
 listint_t *reverse(listint_t **head)
 {
-  listint_t *holder = NULL;
-  listint_t *next_h;
+	listint_t *holder = NULL;
+	listint_t *next_h;
 
-  if (*head == NULL)
-    return (NULL);
-  while (*head)
-    {
-      next_h = (*head)->next;
-      (*head)->next = holder;
-      holder = *head;
-      *head = next_h;
-    }
-  *head = holder;
-  return (*head);
+	if (*head == NULL)
+		return (NULL);
+	while (*head != NULL)
+	{
+		next_h = (*head)->next;
+		(*head)->next = holder;
+		holder = *head;
+		*head = next_h;
+	}
+	*head = holder;
+	return (*head);
 }
 
 /**
@@ -30,41 +30,41 @@ listint_t *reverse(listint_t **head)
  *
  * @head: head of the list
  *
- * Return: 0 if it is not a palindrome, 1 if it is a palindrome 
+ * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
-int is_palindrome(listint_t **head);
+int is_palindrome(listint_t **head)
 {
-  listint_t *fast, *slow, *mid, *holder;
+	listint_t *fast, *slow, *mid, *holder;
 
-  if (head == NULL)
-    return (0);
-  if (*head == NULL || (*head)->next == NULL)
-    return (1);
-  else
-    {
-      fast = *head;
-      slow = *head;
-      while (fast != NULL && fast->next != NULL)
+	if (head == NULL)
+		return (0);
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+	else
 	{
-	  fast = fast->next->next;
-	  slow = slow->next;
+		fast = *head;
+		slow = *head;
+		while (fast != NULL && fast->next != NULL)
+		{
+			fast = fast->next->next;
+			slow = slow->next;
+		}
+		if (fast == NULL)
+			mid = slow;
+		else
+			mid = slow->next;
+		mid = reverse(&mid);
+		holder = *head;
+		while (mid != NULL)
+		{
+			if (holder->n == mid->n)
+			{
+				holder = holder->next;
+				mid = mid->next;
+			}
+			else
+				return (0);
+		}
+		return (1);
 	}
-      if (fast == NULL)
-	mid = slow;
-      else
-	mid = slow->next;
-      mid = reverse(&mid);
-      holder = *head;
-      while (mid != NULL)
-	{
-	  if (holder->n == mid->n)
-	    {
-	      holder = holder->next;
-	      mid = mid->next;
-	    }
-	  else
-	    return (0):      
-	      }
-      return (1);
-    }
 }
