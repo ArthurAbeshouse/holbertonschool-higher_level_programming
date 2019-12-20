@@ -2,8 +2,7 @@
 def roman_to_int(roman_string):
     dic = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     if type(roman_string) is str:  # checks if input a string
-# rests to 0 when program compares
-# multiple roman numerals, like IX
+# rests to 0 when program compares multiple roman numerals, like IX
         num = 0
         holder = 0
         prev = 10000
