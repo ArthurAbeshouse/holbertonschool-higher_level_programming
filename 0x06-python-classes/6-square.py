@@ -4,16 +4,9 @@
 class Square:
     """The class that defines a square"""
 
-    def __init__(self, size=0):
-        """
-        The initialization function for the square class.
-        """
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+    def __init__(self, size=0, position=(0, 0)):
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -54,7 +47,10 @@ class Square:
 
     def my_print(self):
         """print the square"""
-        for y in range(self.__size):
-            print("#" * self.__size)
-        if self.__size == 0:
+        if self.size == 0:
             print()
+            return
+        for j in range(self.position[1]):
+            print()
+        for i in range(self.size):
+            print("{}{}".format(" " * self.position[0], "#" * self.size))
