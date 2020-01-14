@@ -68,6 +68,7 @@ class Rectangle:
         return (self.width + self.height) * 2
 
     def __str__(self):
+        """return string of rectangles with #"""
         if self.width is 0 or self.height is 0:
             return ""
         result = '#' * self.width
