@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This calss is used to create an empty rectangle"""
+"""This class is used to create a rectangle"""
 
 
 class Rectangle:
