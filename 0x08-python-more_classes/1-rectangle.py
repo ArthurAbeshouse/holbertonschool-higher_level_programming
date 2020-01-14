@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-     """creates base height and width of the rectangle"""
+    """creates base height and width of the rectangle"""
 
     def __init__(self, width=0, height=0):
         """The initialization function for the rectangle class
