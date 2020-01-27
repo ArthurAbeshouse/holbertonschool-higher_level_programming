@@ -46,13 +46,13 @@ class Rectangle(Base):
         self.validate_integer("y", value)
         self.__y = value
 
-    def validate_integer(self, name, value, eq=True):
+    def validate_integer(self, name, value):
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if eq and value < 0:
-            raise ValueError("{} must be >= 0".format(name))
-        elif not eq and value <= 0:
-            raise ValueError("{} must be > 0".format(name))
+            raise TypeError("{:s} must be an integer".format(name))
+        if (name is "width" or name is "height") and value <= 0:
+            raise ValueError("{:s} must be > 0".format(name))
+        if (name is 'x' or name is 'y') and value < 0:
+            raise ValueError("{:s} must be >= 0".format(name))
 
     def area(self):
         return self.width * self.height
