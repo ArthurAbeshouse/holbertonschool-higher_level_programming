@@ -39,14 +39,10 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        from models.rectangle import Rectangle
-        from models.square import Square
-        if cls is Rectangle:
-            new = Rectangle(1, 1)
-        elif cls is Square:
-            new = Square(1)
+        if cls.__name__ is "Rectangle":
+            new = cls(1, 1)
         else:
-            new = None
+            new = cls(1, 1)
         new.update(**dictionary)
         return new
 
