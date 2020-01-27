@@ -81,6 +81,7 @@ class Rectangle(Base):
                    self.height)
 
     def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """ internal method that updates instance attributes via */**args """
         if id is not None:
             self.id = id
         if width is not None:
@@ -93,11 +94,13 @@ class Rectangle(Base):
             self.y = y
 
     def update(self, *args, **kwargs):
+        """ updates instance attributes via no-keyword & keyword args """
         if args:
             self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
 
     def to_dictionary(self):
+        """ returns the dictionary representation of rectangle """
         return {"id": self.id, "width": self.__width, "height": self.__height,
                 "x": self.__x, "y": self.__y}

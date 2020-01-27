@@ -26,6 +26,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ saves jsonified object to file """
         if list_objs is not None:
             list_objs = [o.to_dictionary() for o in list_objs]
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
@@ -33,12 +34,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """ unjsonifies a dictonary """
         if json_string is None or not json_string:
             return []
         return loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """ returns an instance with all attribute set """
         if cls.__name__ is "Rectangle":
             new = cls(1, 1)
         else:
@@ -48,6 +51,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """ load the object from Json file """
         try:
             with open("{}.json".format(cls.__name__), 'r') as f:
                 return [cls.create(**obj) for obj in
