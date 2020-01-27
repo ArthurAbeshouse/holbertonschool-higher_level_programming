@@ -44,8 +44,10 @@ class Base:
         """ returns an instance with all attribute set """
         if cls.__name__ is "Rectangle":
             new = cls(1, 1)
-        else:
+        elif cls.__name__ is "Square":
             new = cls(1)
+        else:
+            return None
         new.update(**dictionary)
         return new
 
