@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+""" module for Rectangle class """
 from models.base import Base
 
 
 class Rectangle(Base):
+    """ a Rectangle class """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
@@ -12,24 +14,27 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """ width of this rectangle """
         return self.__width
 
     @width.setter
     def width(self, value):
-        self.validate_integer("width", value)
+        self.validate_integer("width", value, False)
         self.__width = value
 
     @property
     def height(self):
+        """ height of this rectangle """
         return self.__height
 
     @height.setter
     def height(self, value):
-        self.validate_integer("height", value)
+        self.validate_integer("height", value, False)
         self.__height = value
 
     @property
     def x(self):
+        """ x of this rectangle """
         return self.__x
 
     @x.setter
@@ -39,6 +44,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ y of this rectangle """
         return self.__y
 
     @y.setter
@@ -46,23 +52,30 @@ class Rectangle(Base):
         self.validate_integer("y", value)
         self.__y = value
 
-    def validate_integer(self, name, value):
+    def validate_integer(self, name, value, eq=True):
+        """ validates the value """
         if type(value) is not int:
-            raise TypeError("{:s} must be an integer".format(name))
-        if (name is "width" or name is "height") and value <= 0:
-            raise ValueError("{:s} must be > 0".format(name))
-        if (name is 'x' or name is 'y') and value < 0:
-            raise ValueError("{:s} must be >= 0".format(name))
+            raise TypeError("{} must be an integer".format(name))
+        if eq and value < 0:
+            raise ValueError("{} must be >= 0".format(name))
+        elif not eq and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
 
     def area(self):
+        """ computes the area of this rectangle """
         return self.width * self.height
 
     def display(self):
-        s = '\n' * self.y + \
-            (' ' * self.x + '#' * self.width + '\n') * self.height
-        print(s, end='')
+        """ draws the rectangle """
+        print("\n" * self.y, end="")
+        for row in range(self.height):
+            print(" " * self.x, end="")
+            for col in range(self.width):
+                print("#", end="")
+            print()
 
     def __str__(self):
+        """ returns string info about this rectangle """
         return '[{}] ({}) {}/{} - {}/{}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width,
                    self.height)
