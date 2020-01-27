@@ -1,14 +1,15 @@
 #!/usr/bin/python3
+""" module for Base class """
+from json import dumps, loads
 import csv
-import json
-import turtle
-import random
 
 
 class Base:
+    """ Base class for OOP hierarchy """
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ constructor """
         if id is not None:
             self.id = id
         else:
@@ -17,6 +18,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """ returns a json representation of the list_dictionary """
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
