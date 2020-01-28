@@ -67,12 +67,9 @@ class Rectangle(Base):
 
     def display(self):
         """ draws the rectangle """
-        print("\n" * self.y, end="")
-        for row in range(self.height):
-            print(" " * self.x, end="")
-            for col in range(self.width):
-                print("#", end="")
-            print()
+        s = '\n' * self.y + \
+            (' ' * self.x + '#' * self.width + '\n') * self.height
+        print(s, end='')
 
     def __str__(self):
         """ returns string info about this rectangle """
