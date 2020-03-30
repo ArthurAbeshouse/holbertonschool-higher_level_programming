@@ -8,8 +8,13 @@ from sqlalchemy.orm import sessionmaker
 from model_city import City
 
 if __name__ == "__main__":
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format
-                           (argv[1], argv[2], argv[3]), pool_pre_ping=True)
+
+    engine = create_engine(
+        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+            username=argv[1],
+            password=argv[2],
+            db_name=argv[3]),
+        pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
 
@@ -20,3 +25,4 @@ if __name__ == "__main__":
     session.add(new_state)
     session.add(new_city)
     session.commit()
+    session.close()
