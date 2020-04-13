@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Uses the Github API to display your id"""
+"""Shows the last 10 commits via Github API"""
 from requests import get
 from sys import argv
 
