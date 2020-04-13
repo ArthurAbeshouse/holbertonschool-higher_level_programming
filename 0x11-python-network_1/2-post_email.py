@@ -5,6 +5,5 @@ from sys import argv
 
 if __name__ == "__main__":
     data = parse.urlencode({"email": argv[2]}).encode()
-    request = request.Request(argv[1], data)
-    with request.urlopen(request) as response:
+    with request.urlopen(argv[1], data) as response:
         print(response.read().decode("utf-8"))
