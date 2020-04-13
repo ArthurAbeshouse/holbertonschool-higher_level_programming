@@ -8,4 +8,5 @@ if __name__ == "__main__":
                 argv[2], argv[1])).json()
         for i in range(0, 10):
             print("{}: {}".format(url[i].get("sha"),
-                                  url[i].get("commit").get("author").get("name")))
+                                  url[i].get("commit").get(
+                                          "author").get("name")))
