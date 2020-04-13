@@ -9,5 +9,5 @@ if __name__ == "__main__":
 
     try:
         print(r["id"])
-    except KeyError:
+    except:
         print("No results")
