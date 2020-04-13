@@ -39,25 +39,11 @@ What you should learn from this project:
 [8-json_api.py](./8-json_api.py)
 * Write a Python script that takes in a letter and sends a POST request to http://0.0.0.0:5000/search_user with the letter as a parameter.
 
-[9-starwars.py](./9-starwars.py)
-* Write a Python script that takes in a string and sends a search request to the Star Wars API.
-
 [10-my_github.py](./10-my_github.py)
 * Write a Python script that takes your Github credentials (username and password) and uses the Github API to display your id.
 
 [100-github_commits.py](./100-github_commits.py)
 * The Holberton School staff evaluates candidates applying for a back-end position with multiple technical challenges, like this one:
-
-[101-starwars.py](./101-starwars.py)
-* Based on 9-starwars.py:
-Write a Python script that takes in a string and sends a search request to the Star Wars API
-
-[102-starwars.py](./102-starwars.py)
-* Based on 101-starwars.py:
-Write a Python script that takes in a string and sends a search request to the Star Wars API
-
-[103-search_twitter.py](./103-search_twitter.py)
-* Write a Python script that takes in 3 strings and sends a search request to the Twitter API
 
 ## Author
 * **Arthur Abeshouse** - [ArthurAbeshouse](https://github.com/ArthurAbeshouse)
