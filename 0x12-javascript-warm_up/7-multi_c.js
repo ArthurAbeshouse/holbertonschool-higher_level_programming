@@ -1,7 +1,7 @@
 #!/usr/bin/node
-let b = parseInt(process.argv[2]);
+const b = parseInt(process.argv[2]);
 if (!isNaN(b)) {
-  for (i = 0; i < b; i++) {
+  for (let i = 0; i < b; i++) {
     console.log('C is fun');
   }
 } else {
