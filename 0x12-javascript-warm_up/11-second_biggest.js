@@ -2,6 +2,6 @@
 if (process.argv.length < 4) {
   console.log(0);
 } else {
-  let lowHi = process.argv.slice(2).sort((a, b) => b - a);
+  const lowHi = process.argv.slice(2).sort((a, b) => b - a);
   console.log(lowHi[1]);
 }
