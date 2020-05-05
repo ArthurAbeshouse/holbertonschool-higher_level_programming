@@ -2,7 +2,6 @@
 if (process.argv.length < 4) {
   console.log(0);
 } else {
-  let lowHi = process.argv.slice(2).sort((a, b) => b - a);
-  console.log(lowHi[1]);
+  console.log(process.argv.sort().reverse()[1]);
 }
 	
