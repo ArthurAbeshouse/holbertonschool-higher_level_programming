@@ -8,13 +8,13 @@ module.exports = class Rectangle {
   }
   
   print () {
-    for (let i = 0; i < this.height; i++) {
+    for (let i = 0; i < this.height; ++i) {
       console.log('X'.repeat(this.width));
     }
   }
   
   rotate () {
-    const valuesRotated = this.width;
+    let valuesRotated = this.width;
     this.width = this.height;
     this.height = valuesRotated;
   }
