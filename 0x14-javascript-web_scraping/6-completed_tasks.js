@@ -14,6 +14,6 @@ request(url, (error, response, body) => {
 	completed[task.userId] = 1;
       }
     }
+    console.log(completed);
   }
-  console.log(completed);
 });
