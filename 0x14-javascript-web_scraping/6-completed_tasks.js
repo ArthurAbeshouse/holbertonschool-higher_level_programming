@@ -10,7 +10,9 @@ request(url, (error, response, body) => {
     if (task.completed === true) {
       if (completed[task.userId] in completed) {
 	completed[task.userId]++;
-      } else { completed[task.userId] = 1; }
+      } else {
+	completed[task.userId] = 1;
+      }
     }
   }
   console.log(completed);
