@@ -1,14 +1,14 @@
 #!/usr/bin/node
 
-const request = require('request');
-const url = process.argv[2];
+let request = require('request');
+let url = process.argv[2];
 
 request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   }
-  const completed = {};
-  for (const task of JSON.parse(body)) {
+  let completed = {};
+  for (let task of JSON.parse(body)) {
     if (task.completed === true) {
       if (completed[task.userId]) {
 	completed[task.userId]++;
