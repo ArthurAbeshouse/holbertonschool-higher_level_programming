@@ -10,6 +10,6 @@ request.get(process.argv[2], function (error, response, body) {
         numOfwedges++;
       }
     }
-    console.log(numOfwedges);
   }
+  console.log(numOfwedges);
 });
